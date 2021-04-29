@@ -1,6 +1,6 @@
 <?php
 
-// Режим продакшена
+// Режим продакшена(Режим отладки или режим разработки)
 const DEBUG = 1;
 
 // Корень нашего сайта
@@ -30,5 +30,15 @@ const LAYOUT = ROOT . 'default';
 // URL главной страницы
 $app_path = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}";
 $app_path = preg_replace("#[^/]+$#", '', $app_path);
-// const LAYOUT = ROOT . 'default';
+$app_path = str_replace('/public', '', $app_path);
+define("PATH",$app_path);
+
+
+// Админка
+const ADMIN = PATH . 'admin';
+
+
+
+// Подключаем автозагрузчик
+require '../vendor/autoload.php';
 ?>
