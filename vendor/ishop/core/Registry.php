@@ -8,6 +8,7 @@ namespace ishop;
 
 class Registry
 {
+    // Реализуем паттерн Singleton - нельзя создать больше 1 объекта данного класса. Для реализиции используем Трейт
     use TSingletone;
 
 
